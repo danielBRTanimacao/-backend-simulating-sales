@@ -1,1 +1,4 @@
-Criando <a href="{% url "sales:index" %}">Voltar</a>
+{% extends "project/global/base.html" %}
+{% block content %}
+    {% include "project/partials/_form.html" %}
+{% endblock content %}

@@ -1,0 +1,16 @@
+<form action="{% url "sales:index" %}" method="POST">
+    <h1>{{ title_form }}</h1>
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group">
+            <label for="{{ field.is_for_label }}">{{field_label}}</label>
+            {{ field }}
+            {{ field.errors }}
+        </div>
+    {% endfor %}
+        <div>
+            <button type="submit" class="btn btn-primary">
+                Enviar
+            </button>
+        </div>
+</form>
