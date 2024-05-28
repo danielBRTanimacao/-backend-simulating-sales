@@ -1,3 +1,4 @@
-body {
-    background-color: rgb(150, 150, 50);
+li a:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }
