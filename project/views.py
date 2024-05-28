@@ -3,9 +3,14 @@ from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm
 from project.forms import RegisterForm
 
+from .models import ProductForSale
+
 def index(request):
+    products = ProductForSale.objects.order_by('-id')
+
     context = {
-        'site_title': 'Princiapal'
+        'site_title': 'Princiapal',
+        'products': products
     }
     return render(request, 'project/index.html', context)
 

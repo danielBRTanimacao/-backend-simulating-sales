@@ -1,4 +1,12 @@
+body {
+    background-color: #282a37 !important;
+}
+
 li a:hover {
     text-decoration: underline;
     text-underline-offset: 5px;
+}
+
+aside a:hover h6 {
+    color: rgb(0, 40, 130) !important;
 }

@@ -1,8 +1,25 @@
 {% extends "project/global/base.html" %}
 {% block content %}
     {% include "project/partials/_header.html" %}
-    <main>
-        Centro
+    <main class="py-5 container text-light">
+        <article class="bg-dark rounded p-4">
+            <h1>Produtos relacionados com Tecnologia</h1>
+            <aside class="d-flex justify-content-evenly text-dark">
+                {% for product in products %}
+                    <a href="#" class="bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded">
+                        <div class="m-2 text-center">
+                            <img class="img-fluid" width="150" src="{{ product.img.url }}" alt="img">
+                        </div>
+                        <h6 class="text-truncate text-break m-1 lead" style="max-width: 180px;">
+                            {{ product.name }}
+                        </h6>
+                        <p class="m-2 fs-4">
+                            R$ {{ product.value }}
+                        </p>
+                    </a>
+                {% endfor %}
+            </aside>
+        </article>
     </main>
     {% include "project/partials/_footer.html" %}
 {% endblock content %}
