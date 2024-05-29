@@ -6,7 +6,7 @@
             <h1>Produtos relacionados com Tecnologia</h1>
             <aside class="d-flex justify-content-evenly text-dark">
                 {% for product in products %}
-                    <a href="#" class="bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded">
+                    <a href="{% url "sales:product" product.id product.name|cut:"/" %}" class="bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded">
                         <div class="m-2 text-center">
                             <img class="img-fluid" width="150" src="{{ product.img.url }}" alt="img">
                         </div>
