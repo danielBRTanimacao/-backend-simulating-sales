@@ -2,24 +2,27 @@
 {% block content %}
     {% include "project/partials/_header.html" %}
     <main class="py-5 container text-light">
-        <article class="bg-dark rounded p-4">
+        <div class="bg-dark rounded p-4">
             <h1>Produtos relacionados com Tecnologia</h1>
-            <aside class="d-flex justify-content-evenly text-dark">
+            <article class="row text-dark">
                 {% for product in products %}
-                    <a href="{% url "sales:product" product.id product.name|cut:"/" %}" class="bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded">
-                        <div class="m-2 text-center">
-                            <img class="img-fluid" width="150" src="{{ product.img.url }}" alt="img">
-                        </div>
-                        <h6 class="text-truncate text-break m-1 lead" style="max-width: 180px;">
-                            {{ product.name }}
-                        </h6>
-                        <p class="m-2 fs-4">
-                            R$ {{ product.value }}
-                        </p>
+                    <a href="{% url "sales:product" product.id product.name|cut:"/" %}" class="col m-1 bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded d-flex align-items-center">
+                        <div>
+                            <div class="m-2 text-center">
+                                <img class="img-fluid" src="{{ product.img.url }}" alt="img">
+                            </div>
+                            <h6 class="text-truncate text-break m-1" style="max-width: 210px;">
+                                {{ product.name }}
+                            </h6>
+                            <p class="m-2 fs-4">
+                                R$ {{ product.value }}
+                            </p>                   
+                        </div>             
                     </a>
                 {% endfor %}
-            </aside>
-        </article>
+            </article>
+            <a href="#" class="btn btn-outline-light">Veja mais...</a>
+        </div>
     </main>
     {% include "project/partials/_footer.html" %}
 {% endblock content %}

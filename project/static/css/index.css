@@ -1,5 +1,10 @@
+:root {
+    --code-color: #282a37;
+    --hover-color-link: rgb(40, 75, 175);
+}
+
 body {
-    background-color: #282a37 !important;
+    background-color: var(--code-color) !important;
 }
 
 li a:hover {
@@ -7,6 +12,6 @@ li a:hover {
     text-underline-offset: 5px;
 }
 
-aside a:hover h6 {
-    color: rgb(0, 40, 130) !important;
+a:hover h6 {
+    color: var(--hover-color-link) !important;
 }
