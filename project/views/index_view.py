@@ -9,10 +9,12 @@ def index(request):
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
+    categoryes = Category.objects
 
     context = {
         'site_title': 'Principal',
         'products': page_obj,
+        'categoryes': categoryes
     }
     return render(request, 'project/index.html', context)
 
