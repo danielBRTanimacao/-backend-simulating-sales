@@ -1,6 +1,20 @@
 :root {
     --code-color: #282a37;
+    --code-color-light: #454754;
     --hover-color-link: rgb(40, 75, 175);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--code-color-light);
+    border-radius: 10px;
 }
 
 body {
