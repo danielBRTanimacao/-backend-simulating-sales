@@ -1,9 +1,36 @@
 {% extends "project/global/base.html" %}
+{% load static %}
 {% block content %}
     {% include "project/partials/_header.html" %}
-    <main class="text-light">
-        <section>
-            1
+    <main class="text-light bg-light-d mt-5 container rounded p-4">
+        <section class="row">
+            <div class="col-sm-8 row">
+                <div class="col-sm-2">
+                    <ul class="nav-list">
+                        <li class="list-img">
+                            <img class="img-fluid" src="{{ product.img.url }}" width="90" alt="{{ product.img.url }}">
+                        </li>
+                        <li class="list-img">
+                            <img class="img-fluid" src="{{ product.img.url }}" width="90" alt="{{ product.img.url }}">
+                        </li>
+                        <li class="list-img">
+                            <img class="img-fluid" src="{{ product.img.url }}" width="90" alt="{{ product.img.url }}">
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-10">
+                    <img class="img-fluid" width="400" src="{{ product.img.url }}" alt="{{ product.img.url }}">
+                </div>
+            </div>
+            <div class="col-sm-4 border rounded">
+                <div>
+                    <p class="lead">
+                        Chegará <span id="deliveryDayInformation"></span>
+                    </p>
+                </div>
+            </div>
         </section>
     </main>
+
+    <script src="{% static "js/product.js" %}"></script>
 {% endblock content %}

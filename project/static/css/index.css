@@ -29,3 +29,24 @@ li a:hover {
 a:hover h6 {
     color: var(--hover-color-link) !important;
 }
+
+.bg-light-d {
+    background-color: var(--code-color-light);
+    box-shadow: -5px 2px 5px rgb(17, 17, 17);
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.list-img img {
+    margin: 10px;
+}
+
+@media (max-width: 575.99px) {
+    .nav-list {
+        display: flex;
+    }
+}
