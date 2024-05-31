@@ -7,21 +7,23 @@
                 <h1>Produtos relacionados com {{ categorys.name }}</h1>
                 <article class="row text-dark">
                     {% for product in products %}
-                        <!-- Teste -->
-                            <a href="{% url "sales:product" product.id product.name|cut:"/" %}" class="col m-1 bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded d-flex align-items-center">
-                                <div>
+                        {% if categorys.name %}
+                            <div class="col">
+                                <a href="{% url "sales:product" product.id product.name|cut:"/" %}" class="m-1 bg-light text-dark link-offset-2 link-underline link-underline-opacity-0 rounded d-flex align-items-center">
                                     <div class="m-2 text-center">
                                         <img class="img-fluid" width="100" src="{{ product.img.url }}" alt="img">
-                                    </div>
+                                    </div>                                             
+                                </a>
+                                <div>
                                     <h6 class="text-truncate text-break m-1" style="max-width: 210px;">
                                         {{ product.name }}
                                     </h6>
                                     <p class="m-2 fs-4">
                                         R$ {{ product.value }}
-                                    </p>                   
-                                </div>             
-                            </a>
-                        
+                                    </p>  
+                                </div>
+                            </div>
+                        {% endif %}
                     {% endfor %}
                 </article>
                 <a href="#" class="btn btn-outline-light mt-2">Veja mais...</a>
