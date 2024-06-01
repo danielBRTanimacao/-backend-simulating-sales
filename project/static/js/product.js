@@ -1,12 +1,28 @@
 const deliveryDayInfos = document.querySelector("span#deliveryDayInformation");
-var dayThatArrived = new Date().getDay();
-// var taxValue = 45.32;
-var taxValue = 0;
-var taxValueDescount = taxValue - 10;
+const dayHour = document.querySelector("span#dayHour");
+
+let date = new Date();
+var days = [
+    "Domingo",
+    "Segunda",
+    "Terça",
+    "Quarta",
+    "Quinta",
+    "Sexta",
+    "Sabado"
+];
+let todayHourLeft = date.getHours();
+let todayMinutesLeft = date.getMinutes();
+let dayThatArrived = date.getDay();
+
+let taxValue = 45.32;
+let taxValueDescount = taxValue - 10;
+
 if (taxValueDescount <= 0) {
     deliveryDayInfos.innerHTML = `
-        ${dayThatArrived} <strong class="text-success">Frete Gratis</strong>`;
+        ${days[dayThatArrived]} <strong class="text-success">Frete Gratis</strong>`;
+    dayHour.innerHTML = `${todayHourLeft} h ${todayMinutesLeft} min`;
 } else {
     deliveryDayInfos.innerHTML = `
-        ${dayThatArrived} por R$ ${taxValueDescount} <s class="text-body-emphasis" >R$ ${taxValue}</s>`;
+        ${days[dayThatArrived]} por R$ ${taxValueDescount} <s class="text-body-emphasis" >R$ ${taxValue}</s>`;
 }
